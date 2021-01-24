@@ -14,4 +14,3 @@ class Editor extends Component<EditorProps> {
 }
 
 export default Editor
-  
