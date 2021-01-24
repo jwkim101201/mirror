@@ -7,6 +7,7 @@ const root = document.getElementById('root')!
 class App extends Component {
   constructor (props: {}) {
     super(props)
+    
     this.showEditor = this.showEditor.bind(this)
     this.newDesign = this.newDesign.bind(this)
     this.openDesign = this.openDesign.bind(this)
