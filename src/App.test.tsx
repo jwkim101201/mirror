@@ -1,14 +1,13 @@
-import { render } from '@testing-library/react'
-import App from './pages/App'
+import { render, queryByAttribute } from '@testing-library/react'
+import App from './App'
 
 it('app has all elements', () => {
-  const { getByText } = render(<App />)
+  const { container, getByText } = render(<App />)
+  const getById = queryByAttribute.bind(null, 'id')
   
-  const title = getByText('Mirror')
   const newDesignBtn = getByText('New Design')
-  const openDesignBtn = getByText('Open Design')
+  const openDesignBtn = getById(container as HTMLElement, 'fileInput')
 
-  expect(title).toBeInTheDocument()
   expect(newDesignBtn).toBeInTheDocument()
   expect(openDesignBtn).toBeInTheDocument()
 })
